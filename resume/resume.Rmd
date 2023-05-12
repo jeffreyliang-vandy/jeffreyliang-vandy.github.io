@@ -18,8 +18,10 @@ Linkdin       [_Zhuohui Liang_](https://www.linkedin.com/in/zhuohui-liang-123108
 -----------   -----------------------------------------------------------------------
 
 ## EDUCATION:
+**Vanderbilt University** \hfill Nashville, U.S. \newline
+  Major : PhD Student in Biostatistics \hfill 08/2022-PRESENT\newline
 **Columbia University** \hfill New York City, U.S. \newline
-  Major : Master Candidate in Biostatistics \hfill 09/2020-PRESENT\newline
+  Major : Master of Science in Biostatistics \hfill 09/2020-06/2022\newline
 **Shandong University** \hfill Jinan, China\newline
   Major: Bachelor of Public Health \hfill 09/2014-06/2019
   

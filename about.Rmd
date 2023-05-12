@@ -18,7 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## EDUCATION
 
-- Master of Science Candidate, Department of Biostatistics,Columbia University, U.S. [06/2020-Present]{style="float:right"}
+- PhD Student in Biostatistics, Department of Biostatistics,Vanderbilt University, U.S. [08/2022-PRESENT]{style="float:right"}
+
+- Master of Science, Department of Biostatistics,Columbia University, U.S. [09/2020-06/2022]{style="float:right"}
 
 - Bachelor of Medical Science, Shandong University, China. [09/2014-06/2019]{style="float:right"}
 

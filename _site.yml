@@ -5,6 +5,8 @@ navbar:
   left:
   - text: "Projects"
     menu:
+    - text: "2022 Comps Notes"
+      href: https://vanderbilt365-my.sharepoint.com/:b:/g/personal/zhuohui_liang_vanderbilt_edu/ERWb45e0MutJqWCheF1CGAkB3hiISS_f3cak-3eqEBcTOA?e=cItd3d
     - text: "Risky Coffee(P8105 Final projects)"
       href: https://zl2974.github.io/hot_coffee/
     - text: "Single Cell Clusting"

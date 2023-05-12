@@ -12,21 +12,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Hello World From Zhuohui Liang
 <p class="aligncenter">
-  <img src="./file/mmexport1550238730511.jpg" alt="Me" style = "width:75%" />
+  <img src="./file/237E2AA5-F833-44DF-864A-D59E43712339_1_105_c.jpeg" alt="Me" style = "width:75%" />
   </p>
   <style>
 .aligncenter {
     text-align: center;
 }
 </style>
-<center><b>This page is  ALL  ABOUT  Zhuohui Liang</b>(old photo, it hard to have a no-mask-on photo on 2020/2021)</center>
+<center><b>This page is  ALL  ABOUT  Zhuohui Liang</b></center>
 
 # Introduction
 
 \ My name is **Zhuohui(Jeffrey) Liang**, a Chinese travel lover now located in 
-New York City. 
+Nashville City. 
+(Yeah... I am doing PhD here)
 <br><br>
-\ I'm Master of Science student at Columbia University in New York 
+\ I got my Master of Science  at Columbia University in New York 
 City. My interest is in statistical method in data science, specifically fusion on similarity network and clustering as well as propagation method on the network based on Graph Theorem. 
 <br><br>
 \ Before joining Columbia for further training, I had data analytic and coding 
