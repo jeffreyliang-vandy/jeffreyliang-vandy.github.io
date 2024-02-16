@@ -1,0 +1,125 @@
+---
+title: "ACCRE Introduction"
+author: "Jeffrey Liang"
+format: 
+  revealjs:
+    theme: sky
+    chalkboard: true
+editor: visual
+---
+
+## Why do you need Accre?
+
+-   Do you have a 8G/16G laptop and screaming at it/yourself when you try to load a imaging/EHR/Genomic data?
+
+-   Do you max out your laptop's fan doing simulation during class and all the people are looking at you (Yeji)
+
+-   Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop?
+
+-   Or you just want to be cool
+
+## ACCRE!!
+
+> It's a cluster, with a lot of CPU and even more RAM than you need
+
+::: columns
+::: {.column width="50%"}
+Terminal
+:::
+
+::: {.column width="50%"}
+Rstudio
+:::
+:::
+
+## It's Linux {auto-animate="true"}
+
+![](./figure/terminal.png)
+
+## This is Linux {auto-animate="true"}
+
+![](./figure/accre_terminal.png)
+
+::: fragment
+I promise you you will not see a single line of linux code for the first 1/3 of this tutorial
+:::
+
+## [Visual Portal](https://portal.accre.vanderbilt.edu/)
+
+[![](figure/visual_portal.png){fig-align="center"}](https://portal.accre.vanderbilt.edu/)
+
+## [File](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/files)
+
+![](figure/File.png){fig-align="center"}
+
+## [Interactive Apps](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
+
+![](images/Interactive%20App.png)
+
+## [Interactive Apps](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
+
+![](images/Interactive%20App.png)
+
+-   Rstudio Server and Jupyterare your friends and most efficient workspace
+
+-   Don't even try the desktop it's horrible
+
+## See it's not that bad
+
+-   With Rstudio and Jupyter Notebook you can gain access to the CPU and RAM you need for your code-writing
+
+::: {.fragment .highlight-red}
+::: {.fragment .grow}
+-   No a single line of Linux code so far
+:::
+:::
+
+## Background Job
+
+This is the most powerful tools of ACCRE
+
+> Run code, go to sleep
+
+-   How to use SCREEN
+-   How to use slurm
+-   How to use slurm to run 1000 simulation
+
+## Screen
+
+There's a very simple tutorial [here](https://geeksforgeeks.org/screen-command-in-linux-with-examples/){preview-link="auto"}
+
+After installed screen
+
+::: fragment
+```{bash}
+screen
+Rscript This_is_an_example.R
+#Ctrl+A+D
+```
+:::
+
+::: fragment
+Then you can goes back and check if it is finished
+
+```{bash}
+screen -ls #this will give you the job id
+screen -r job_id
+#Job Done
+#Ctrl+D
+```
+:::
+
+## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions)
+
+A tutorial is [here](https://www.vanderbilt.edu/accre/documentation/slurm/){preview-link="true"}
+
+> Slurm allows you to run as much simulations as you want in the background, simultaneously\*
+
+All you need is
+
+1.  You simulation code(\*.R,\*.python)
+2.  A slurm file(Don't worry, they have templates [there](https://www.vanderbilt.edu/accre/documentation/slurm/))
+
+## Environments
+
+> You are afraid of Linux, more like you are afraid of building the environment
