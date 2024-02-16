@@ -38,6 +38,12 @@ EMAIL 2 : \href{mailto:<jeffreyliang1995@outlook.com>}{jeffreyliang1995@outlook.
 
 ## RESEARCH EXPERIENCE
 
+- **Department of Biostatistics, Vanderbilt University**
+\hfill New York\newline
+  _Research Assistant, Advisor: Prof. Bryan Shepherd_ \hfill 09/2023-PRESENT\newline
+  **HIV cohort synthesis data generation **
+  * Generate publishable HIV-cohort EHR data with Generative Adversary Network.
+
 - **Department of Biostatistics, Columbia University**
 \hfill New York\newline
   _Research Assistant, Advisor: Prof. Shuang Wang_ \hfill 04/2021-05/2022\newline
@@ -154,6 +160,10 @@ data support for a pilot feasibility project.
 <!--   _INTERN_ \hfill 05/2017-10/2017  -->
 <!--   * Monitored nutritional and health status of patients and collaborated with surgeons from the spine -->
 <!-- surgery department, gynecology department, obstetrics department, and pediatrics department. -->
+
+## Conference Appreance
+- IHOWD 2024 \hfill Portugal
+Oval Presentation:
 
 ## SKILLS
 - Computing: Python, R, Linux command line

@@ -5,6 +5,8 @@ navbar:
   left:
   - text: "Projects"
     menu:
+    - text: "Brainmind Cohort Report 2024"
+      href: ./report.html
     - text: "2023 Comps Notes"
       href: https://github.com/jeffreyliang-vandy/jeffreyliang-vandy.github.io/blob/main/comp_note_2023.pdf
     - text: "Risky Coffee(P8105 Final projects)"
