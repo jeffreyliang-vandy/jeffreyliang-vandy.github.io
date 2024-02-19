@@ -14,7 +14,7 @@ editor: visual
 
 -   Do you max out your laptop's fan doing simulation during class and all the people are looking at you (Yeji)
 
--   Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop?
+-   Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop and want to speed it up?
 
 -   Or you just want to be cool
 
@@ -82,7 +82,7 @@ This is the most powerful tools of ACCRE
 
 -   How to use SCREEN
 -   How to use slurm
--   How to use slurm to run 1000 simulation
+-   How to use slurm to run 1000 simulation simultaneously
 
 ## Screen
 
@@ -120,6 +120,71 @@ All you need is
 1.  You simulation code(\*.R,\*.python)
 2.  A slurm file(Don't worry, they have templates [there](https://www.vanderbilt.edu/accre/documentation/slurm/))
 
+## [Parallel Job!!!](https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs)
+
+> This is how ACCRE going to boost your research to meet the deadline every Friday
+
+Same for slurm,
+
 ## Environments
 
 > You are afraid of Linux, more like you are afraid of building the environment
+
+-   In ACCRE, environment was built and load with `module` . It is easy to use, but most of the time it is out-of-date(R is 4.0.5)
+
+-   `conda`/`mamba` is the easiest way to build a custom environment
+
+-   Docker container is my recommended way to build environment
+
+Links for installation were attached
+
+## Module & Mamba
+
+::: {.fragment fragment-index="1"}
+Using Mamba
+
+```{bash}
+### In the terminal
+mamba install r-base-4.3.2 r-tidyverse
+```
+
+EASY
+:::
+
+::: {.fragment fragment-index="2"}
+Using Module
+
+```{bash}
+### In the terminal
+### Loading R environment
+module load GCC OpenMPI R R-bundle-Bioconductor
+### Installing R Packages into your home directory
+mkdir -p ~/R/rlib-4.0.5
+```
+:::
+
+::: {.fragment fragment-index="3"}
+```{bash}
+### In the R
+.libPaths("~/R/rlib-4.0.5")
+install.packages(tidyverse)
+```
+
+Unfortunately the Rstudio in ACCRE only use this one
+:::
+
+## Docker
+
+> This has a little bit of learning curve, but once you know how to do it, you. can do this:
+
+A tutorial of Singularity(Accre's docker) is [here](https://www.vanderbilt.edu/accre/documentation/singularity/)
+
+Insert Jupyter show rstudio and R version
+
+Insert Text recognition
+
+## Summary
+
+ACCRE itself was built to be used with minimal knowledge of Linux
+
+But you can expand what you can do with ACCRE with a little bit of exploring the linux world

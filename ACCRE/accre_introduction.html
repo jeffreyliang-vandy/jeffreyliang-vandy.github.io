@@ -406,7 +406,7 @@ Jeffrey Liang
 <ul>
 <li><p>Do you have a 8G/16G laptop and screaming at it/yourself when you try to load a imaging/EHR/Genomic data?</p></li>
 <li><p>Do you max out your laptop’s fan doing simulation during class and all the people are looking at you (Yeji)</p></li>
-<li><p>Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop?</p></li>
+<li><p>Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop and want to speed it up?</p></li>
 <li><p>Or you just want to be cool</p></li>
 </ul>
 </section>
@@ -476,7 +476,7 @@ Jeffrey Liang
 <ul>
 <li>How to use SCREEN</li>
 <li>How to use slurm</li>
-<li>How to use slurm to run 1000 simulation</li>
+<li>How to use slurm to run 1000 simulation simultaneously</li>
 </ul>
 </section>
 <section id="screen" class="slide level2">
@@ -508,11 +508,61 @@ Jeffrey Liang
 <li>A slurm file(Don’t worry, they have templates <a href="https://www.vanderbilt.edu/accre/documentation/slurm/">there</a>)</li>
 </ol>
 </section>
+<section id="parallel-job" class="slide level2">
+<h2><a href="https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs">Parallel Job!!!</a></h2>
+<blockquote>
+<p>This is how ACCRE going to boost your research to meet the deadline every Friday</p>
+</blockquote>
+<p>Same for slurm,</p>
+</section>
 <section id="environments" class="slide level2">
 <h2>Environments</h2>
 <blockquote>
 <p>You are afraid of Linux, more like you are afraid of building the environment</p>
 </blockquote>
+<ul>
+<li><p>In ACCRE, environment was built and load with <code>module</code> . It is easy to use, but most of the time it is out-of-date(R is 4.0.5)</p></li>
+<li><p><code>conda</code>/<code>mamba</code> is the easiest way to build a custom environment</p></li>
+<li><p>Docker container is my recommended way to build environment</p></li>
+</ul>
+<p>Links for installation were attached</p>
+</section>
+<section id="module-mamba" class="slide level2">
+<h2>Module &amp; Mamba</h2>
+<div class="fragment" data-fragment-index="1">
+<p>Using Mamba</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>### In the terminal</span>
+<span id="cb3-2"><a href="#cb3-2"></a>mamba install r-base-4.3.2 r-tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>EASY</p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p>Using Module</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>### In the terminal</span>
+<span id="cb4-2"><a href="#cb4-2"></a>### Loading R environment</span>
+<span id="cb4-3"><a href="#cb4-3"></a>module load GCC OpenMPI R R-bundle-Bioconductor</span>
+<span id="cb4-4"><a href="#cb4-4"></a>### Installing R Packages into your home directory</span>
+<span id="cb4-5"><a href="#cb4-5"></a>mkdir -p ~/R/rlib-4.0.5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment" data-fragment-index="3">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>### In the R</span>
+<span id="cb5-2"><a href="#cb5-2"></a>.libPaths("~/R/rlib-4.0.5")</span>
+<span id="cb5-3"><a href="#cb5-3"></a>install.packages(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Unfortunately the Rstudio in ACCRE only use this one</p>
+</div>
+</section>
+<section id="docker" class="slide level2">
+<h2>Docker</h2>
+<blockquote>
+<p>This has a little bit of learning curve, but once you know how to do it, you. can do this:</p>
+</blockquote>
+<p>A tutorial of Singularity(Accre’s docker) is <a href="https://www.vanderbilt.edu/accre/documentation/singularity/">here</a></p>
+<p>Insert Jupyter show rstudio and R version</p>
+<p>Insert Text recognition</p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>ACCRE itself was built to be used with minimal knowledge of Linux</p>
+<p>But you can expand what you can do with ACCRE with a little bit of exploring the linux world</p>
 <div class="footer footer-default">
 
 </div>
