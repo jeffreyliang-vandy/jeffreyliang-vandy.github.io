@@ -6,7 +6,7 @@ navbar:
   - text: "Projects"
     menu:
     - text: "Brainmind Cohort Report 2024"
-      href: ./report.html
+      href: ./colab2/report.html
     - text: "HIV Synthetic Data"
       href: ""
     - text: "ACCRE Tutorial"
