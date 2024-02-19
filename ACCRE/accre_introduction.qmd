@@ -8,7 +8,7 @@ format:
 editor: visual
 ---
 
-## Why do you need Accre?
+## Why do you need ACCRE?
 
 -   Do you have a 8G/16G laptop and screaming at it/yourself when you try to load a imaging/EHR/Genomic data?
 
@@ -118,23 +118,25 @@ A tutorial is [here](https://www.vanderbilt.edu/accre/documentation/slurm/){prev
 All you need is
 
 1.  You simulation code(\*.R,\*.python)
-2.  A slurm file(Don't worry, they have templates [there](https://www.vanderbilt.edu/accre/documentation/slurm/))
+2.  A slurm file(Don't worry, they have templates [there](https://www.vanderbilt.edu/accre/documentation/slurm/){preview-link="true"})
 
-## [Parallel Job!!!](https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs)
+## [Parallel Job!!!](https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs){preview-link="true"}
 
 > This is how ACCRE going to boost your research to meet the deadline every Friday
 
 Same for slurm,
 
+There is a [tutorial](https://github.com/accre/R/tree/master/parallel-workshop){preview-link="true"} of how to do Parallel computing in ACCRE
+
 ## Environments
 
-> You are afraid of Linux, more like you are afraid of building the environment
+> If you are afraid of Linux, more like you are afraid of building the environment
 
 -   In ACCRE, environment was built and load with `module` . It is easy to use, but most of the time it is out-of-date(R is 4.0.5)
 
--   `conda`/`mamba` is the easiest way to build a custom environment
+-   `conda`/[`mamba`](https://github.com/conda-forge/miniforge){preview-link="true"} is the easiest way to build a custom environment
 
--   Docker container is my recommended way to build environment
+-   [Docker](https://www.docker.com/get-started/){preview-link="true"} container is my recommended way to build environment
 
 Links for installation were attached
 
@@ -177,14 +179,32 @@ Unfortunately the Rstudio in ACCRE only use this one
 
 > This has a little bit of learning curve, but once you know how to do it, you. can do this:
 
-A tutorial of Singularity(Accre's docker) is [here](https://www.vanderbilt.edu/accre/documentation/singularity/)
+::: columns
+::: {.column width="50%"}
+![Use latest version of R in VS-code](figure/vscode_proxy.png){fig-align="center"}
+:::
 
-Insert Jupyter show rstudio and R version
+::: {.column width="50%"}
+![Text Recognizing App on ACCRE](figure/video_recognizing.gif){fig-align="center"}
+:::
+:::
 
-Insert Text recognition
+A tutorial of Singularity(Accre's Docker) is [here](https://www.vanderbilt.edu/accre/documentation/singularity/){preview-link="true"}
 
-## Summary
+## Docker
+
+[Docker hub](https://hub.docker.com/)
+
+## Summary {auto-animate="true"}
 
 ACCRE itself was built to be used with minimal knowledge of Linux
 
 But you can expand what you can do with ACCRE with a little bit of exploring the linux world
+
+So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/). It comes with a training module that takes less than 1hr and very helpful.
+
+## Summary {auto-animate="true"}
+
+So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/). It comes with a training module that takes less than 1hr and very helpful.
+
+![](figure/apply.png){fig-align="center"}
