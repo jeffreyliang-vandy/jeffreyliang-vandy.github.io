@@ -8,13 +8,13 @@ format:
 editor: visual
 ---
 
-## Why do you need ACCRE?
+## Do you have these situations?
 
 -   Do you have a 8G/16G laptop and screaming at it/yourself when you try to load a imaging/EHR/Genomic data?
 
 -   Do you max out your laptop's fan doing simulation during class and all the people are looking at you (Yeji)
 
--   Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop and want to speed it up?
+-   Or do you have 100,000,000,000 simulations need to run and so afraid to close your laptop/want to speed it up?
 
 -   Or you just want to be cool
 
@@ -22,17 +22,11 @@ editor: visual
 
 > It's a cluster, with a lot of CPU and even more RAM than you need
 
-::: columns
-::: {.column width="50%"}
-Terminal
-:::
+![128G Virtual Machine](figure/memory.png){fig-align="center"}
 
-::: {.column width="50%"}
-Rstudio
-:::
-:::
+## Why people not using ACCRE {auto-animate="true"}
 
-## It's Linux {auto-animate="true"}
+> It's Linux
 
 ![](./figure/terminal.png)
 
@@ -60,7 +54,7 @@ I promise you you will not see a single line of linux code for the first 1/3 of 
 
 ![](images/Interactive%20App.png)
 
--   Rstudio Server and Jupyterare your friends and most efficient workspace
+-   Rstudio Server and Jupyter are your friends and most efficient workspace in ACCRE
 
 -   Don't even try the desktop it's horrible
 
@@ -175,7 +169,7 @@ install.packages(tidyverse)
 Unfortunately the Rstudio in ACCRE only use this one
 :::
 
-## Docker
+## Docker {auto-animate="true"}
 
 > This has a little bit of learning curve, but once you know how to do it, you. can do this:
 
@@ -191,7 +185,7 @@ Unfortunately the Rstudio in ACCRE only use this one
 
 A tutorial of Singularity(Accre's Docker) is [here](https://www.vanderbilt.edu/accre/documentation/singularity/){preview-link="true"}
 
-## Docker
+## Docker {auto-animate="true"}
 
 [Docker hub](https://hub.docker.com/)
 
