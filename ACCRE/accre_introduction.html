@@ -493,17 +493,51 @@ Jeffrey Liang
 <span id="cb2-4"><a href="#cb2-4"></a>#Ctrl+D</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="slurm" class="slide level2">
-<h2><a href="https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions">Slurm</a></h2>
+<section id="slurm" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><a href="https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions">Slurm</a></h2>
 <p>A tutorial is <a href="https://www.vanderbilt.edu/accre/documentation/slurm/" data-preview-link="true">here</a></p>
 <blockquote>
-<p>Slurm allows you to run as much simulations as you want in the background, <strong>simultaneously*</strong></p>
+<p>Slurm allows you to run as much simulations as you want in the background, simultaneously*</p>
 </blockquote>
 <p>All you need is</p>
 <ol type="1">
 <li>You simulation code(*.R,*.python)</li>
 <li>A slurm file(Don’t worry, they have templates <a href="https://www.vanderbilt.edu/accre/documentation/slurm/" data-preview-link="true">there</a>)</li>
 </ol>
+</section>
+<section id="slurm-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><a href="https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions">Slurm</a></h2>
+<p>Have your simulation code ready(*.R, *.python)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {bash} number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a>library(tidyverse)</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>x&lt;- rnorm(1000)</span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>mean(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="slurm-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><a href="https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions">Slurm</a></h2>
+<p>Create a file like simulation.slurm</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a>#!/bin/bash</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>#SBATCH --mail-user=vunetid@vanderbilt.edu</span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>#SBATCH --mail-type=ALL</span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>#SBATCH --ntasks=1</span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>#SBATCH --time=00:05:00</span>
+<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>#SBATCH --mem=250M</span>
+<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>#SBATCH --array=0-24</span>
+<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>#SBATCH --output=wdi-by-year-%a.out</span>
+<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a></span>
+<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a>module load GCC OpenMPI R</span>
+<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a>R --version</span>
+<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a></span>
+<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a>echo "SLURM_JOBID: " $SLURM_JOBID</span>
+<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a>echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID</span>
+<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a>echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID</span>
+<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a></span>
+<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a>Rscript wdi-by-year.r $SLURM_ARRAY_TASK_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="slurm-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><a href="https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions">Slurm</a></h2>
+<p>Then submit your job in terminal</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a># In terminal: </span>
+<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a>sbatch simulation.slurm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="parallel-job" class="slide level2">
 <h2><a href="https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs" data-preview-link="true">Parallel Job!!!</a></h2>
@@ -529,22 +563,22 @@ Jeffrey Liang
 <h2>Module &amp; Mamba</h2>
 <div class="fragment" data-fragment-index="1">
 <p>Using Mamba</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>### In the terminal</span>
-<span id="cb3-2"><a href="#cb3-2"></a>mamba install r-base-4.3.2 r-tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>### In the terminal</span>
+<span id="cb6-2"><a href="#cb6-2"></a>mamba install r-base-4.3.2 r-tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>EASY</p>
 </div>
 <div class="fragment" data-fragment-index="2">
 <p>Using Module</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>### In the terminal</span>
-<span id="cb4-2"><a href="#cb4-2"></a>### Loading R environment</span>
-<span id="cb4-3"><a href="#cb4-3"></a>module load GCC OpenMPI R R-bundle-Bioconductor</span>
-<span id="cb4-4"><a href="#cb4-4"></a>### Installing R Packages into your home directory</span>
-<span id="cb4-5"><a href="#cb4-5"></a>mkdir -p ~/R/rlib-4.0.5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>### In the terminal</span>
+<span id="cb7-2"><a href="#cb7-2"></a>### Loading R environment</span>
+<span id="cb7-3"><a href="#cb7-3"></a>module load GCC OpenMPI R R-bundle-Bioconductor</span>
+<span id="cb7-4"><a href="#cb7-4"></a>### Installing R Packages into your home directory</span>
+<span id="cb7-5"><a href="#cb7-5"></a>mkdir -p ~/R/rlib-4.0.5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment" data-fragment-index="3">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>### In the R</span>
-<span id="cb5-2"><a href="#cb5-2"></a>.libPaths("~/R/rlib-4.0.5")</span>
-<span id="cb5-3"><a href="#cb5-3"></a>install.packages(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>### In the R</span>
+<span id="cb8-2"><a href="#cb8-2"></a>.libPaths("~/R/rlib-4.0.5")</span>
+<span id="cb8-3"><a href="#cb8-3"></a>install.packages(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Unfortunately the Rstudio in ACCRE only use this one</p>
 </div>
 </section>

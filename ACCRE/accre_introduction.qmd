@@ -103,7 +103,7 @@ screen -r job_id
 ```
 :::
 
-## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions)
+## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
 
 A tutorial is [here](https://www.vanderbilt.edu/accre/documentation/slurm/){preview-link="true"}
 
@@ -113,6 +113,52 @@ All you need is
 
 1.  You simulation code(\*.R,\*.python)
 2.  A slurm file(Don't worry, they have templates [there](https://www.vanderbilt.edu/accre/documentation/slurm/){preview-link="true"})
+
+## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
+
+Have your simulation code ready(\*.R, \*.python)
+
+```{bash}
+library(tidyverse)
+x<- rnorm(1000)
+mean(x)
+```
+
+
+## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
+
+Create a file like simulation.slurm
+
+```{bash}
+#!/bin/bash
+#SBATCH --mail-user=vunetid@vanderbilt.edu
+#SBATCH --mail-type=ALL
+#SBATCH --ntasks=1
+#SBATCH --time=00:05:00
+#SBATCH --mem=250M
+#SBATCH --array=0-24
+#SBATCH --output=wdi-by-year-%a.out
+
+module load GCC OpenMPI R
+R --version
+
+echo "SLURM_JOBID: " $SLURM_JOBID
+echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
+echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
+
+Rscript wdi-by-year.r $SLURM_ARRAY_TASK_ID
+```
+
+## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
+
+Then submit your job in terminal
+
+```{bash}
+# In terminal: 
+sbatch simulation.slurm
+```
+
+
 
 ## [Parallel Job!!!](https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs){preview-link="true"}
 
