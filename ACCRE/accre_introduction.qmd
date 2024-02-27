@@ -1,12 +1,18 @@
 ---
 title: "ACCRE Introduction"
 author: "Jeffrey Liang"
+execute:
+  eval: false
 format: 
   revealjs:
     theme: sky
     chalkboard: true
 editor: visual
 ---
+
+## Access this presentation
+
+![](figure/link.png){fig-align="left"}
 
 ## Do you have these situations?
 
@@ -26,7 +32,7 @@ editor: visual
 
 ## Why people not using ACCRE {auto-animate="true"}
 
-> It's Linux
+> I don't know how to use Linux
 
 ![](./figure/terminal.png)
 
@@ -60,12 +66,16 @@ I promise you you will not see a single line of linux code for the first 1/3 of 
 
 ## See it's not that bad
 
--   With Rstudio and Jupyter Notebook you can gain access to the CPU and RAM you need for your code-writing
+-   With Rstudio and Jupyter Notebook you can gain access to the RAM you need for your code-writing
 
 ::: {.fragment .highlight-red}
 ::: {.fragment .grow}
 -   No a single line of Linux code so far
 :::
+:::
+
+::: {.fragment}
+- But it doesn't necessarily speed up your work
 :::
 
 ## Background Job
@@ -122,8 +132,8 @@ Have your simulation code ready(\*.R, \*.python)
 library(tidyverse)
 x<- rnorm(1000)
 mean(x)
+sys.sleep(10)
 ```
-
 
 ## [Slurm](https://portal.accre.vanderbilt.edu/pun/sys/dashboard/batch_connect/sessions) {auto-animate="true"}
 
@@ -158,8 +168,6 @@ Then submit your job in terminal
 sbatch simulation.slurm
 ```
 
-
-
 ## [Parallel Job!!!](https://www.vanderbilt.edu/accre/documentation/parallel/#multithreaded-jobs){preview-link="true"}
 
 > This is how ACCRE going to boost your research to meet the deadline every Friday
@@ -167,6 +175,14 @@ sbatch simulation.slurm
 Same for slurm,
 
 There is a [tutorial](https://github.com/accre/R/tree/master/parallel-workshop){preview-link="true"} of how to do Parallel computing in ACCRE
+
+::: fragment
+-   Using ACCRE doesn't necessarily speed up your job if you have like 500 3-second simulations
+:::
+
+::: fragment
+-   Resources are shared among all of us, so sometime all of us are using and has waiting line for the servers
+:::
 
 ## Environments
 
@@ -183,7 +199,7 @@ Links for installation were attached
 ## Module & Mamba
 
 ::: {.fragment fragment-index="1"}
-Using Mamba
+-   Using Mamba
 
 ```{bash}
 ### In the terminal
@@ -194,7 +210,7 @@ EASY
 :::
 
 ::: {.fragment fragment-index="2"}
-Using Module
+-   Using Module
 
 ```{bash}
 ### In the terminal
@@ -235,16 +251,89 @@ A tutorial of Singularity(Accre's Docker) is [here](https://www.vanderbilt.edu/a
 
 [Docker hub](https://hub.docker.com/)
 
+```{bash}
+# build a container in your ACCRE
+singularity pull docker://jupyter/datascience-notebook:latest
+```
+
+And launch it with the interaction-app
+
+::: fragment
+OR run it with slurm:
+
+```{bash}
+#!/bin/bash
+#SBATCH --mail-user=vunetid@vanderbilt.edu
+#SBATCH --mail-type=ALL
+#SBATCH --ntasks=1
+#SBATCH --time=00:05:00
+#SBATCH --mem=250M
+#SBATCH --array=0-24
+#SBATCH --output=wdi-by-year-%a.out
+
+singularity datascience-notebook.sif exec Rscript simulation.R
+```
+:::
+
+## Docker {auto-animate="true"}
+
+Build your own container:
+
+> What I did here is install proxy for vs-code in jupyter, so that I can use vs-code in ACCRE
+
+```{bash}
+FROM ubuntu:22.04 #core
+#start building environment
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+RUN code-server --install-extension ms-python.python && \   
+    code-server --install-extension ms-toolsai.jupyter
+
+WORKDIR /app
+
+RUN wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"  -O miniconda.sh && \
+    bash miniconda.sh -b -p /app/conda -f && \
+    rm miniconda.sh
+    
+ENV PATH=$PATH:/app/conda/bin
+ARG PATH=$PATH:/app/conda/bin
+
+RUN mamba install -y\
+    jupyterlab \
+    notebook \
+    jupyter-vscode-proxy && \
+    mkdir /app/.jupyter
+
+
+EXPOSE 8888 8787 8080
+CMD ["jupyter-lab","--ip=0.0.0.0","--port=8888","--no-browser","--allow-root","--NotebookApp.token=''", "--NotebookApp.password=''"]
+
+```
+
 ## Summary {auto-animate="true"}
 
-ACCRE itself was built to be used with minimal knowledge of Linux
+-   ACCRE itself was built to be used with minimal knowledge of Linux
 
-But you can expand what you can do with ACCRE with a little bit of exploring the linux world
+-   But you can expand what you can do with ACCRE with a little bit of exploring the linux world
 
-So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/). It comes with a training module that takes less than 1hr and very helpful.
+-   I am sure that someone in this room has better idea to maximizing efficient from ACCRE
+
+-   **REMEMBER:** We shared the resources so use it with others people in mind
+
+-   So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/) in `accre.vanderbilt.edu`. It comes with a training module that takes less than 1hr and very helpful.
 
 ## Summary {auto-animate="true"}
 
-So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/). It comes with a training module that takes less than 1hr and very helpful.
+-   So go ahead and apply for an [account](https://www.vanderbilt.edu/accre/getting-started/) in `accre.vanderbilt.edu`. It comes with a training module that takes less than 1hr and very helpful.
 
 ![](figure/apply.png){fig-align="center"}
+
+## Thank You
+
+![](figure/link.png){fig-align="left"}
