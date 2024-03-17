@@ -8,7 +8,7 @@ navbar:
     - text: "Brainmind Cohort Report 2024"
       href: ./colab2/report.html
     - text: "HIV Synthetic Data"
-      href: ""
+      href: "https://github.com/jeffreyliang-vandy/iwhod2024/blob/main/IWHOD.pdf"
     - text: "ACCRE Tutorial"
       href: ./ACCRE/accre_introduction.html
     - text: "2023 Comps Notes"
