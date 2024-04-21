@@ -21,9 +21,11 @@ header-includes:
 
 \begin{center}
 \begin{tabular}{c|c|c}
-WORK PHONE : +1 (646) 496-3283 & 
-EMAIL 1 : \href{mailto:<zl2974@cumc.columbia.edu>}{zl2974@cumc.columbia.edu} &
-EMAIL 2 : \href{mailto:<jeffreyliang1995@outlook.com>}{jeffreyliang1995@outlook.com}\\ 
+More info: \href{jeffreyliang-vandy.github.io}{jeffreyliang-vandy.github.io} 
+&
+EMAIL : \href{mailto:<zhuohui.liang@vanderbilt.edu>}{zhuohui.liang@vanderbilt.edu} 
+& 
+\href{https://www.linkedin.com/in/zhuohui-liang-123108203/}{Linkedin}
 \end{tabular}
 \end{center}
 
@@ -31,7 +33,7 @@ EMAIL 2 : \href{mailto:<jeffreyliang1995@outlook.com>}{jeffreyliang1995@outlook.
 - **VANDERBILT UNIVERSITY** \hfill Nashville, U.S \newline
   MAJOR : DOCTORAL PROGRAM IN BIOSTATISTICS \hfill 08/2022-PRESENT
 - **COLUMBIA UNIVERSIY** \hfill New York City, U.S. \newline
-  MAJOR : MASTER CANDIDATE IN BIOSTATISTICS(4.07/4.3) \hfill 09/2020-06/2022
+  MAJOR : MASTER OF SCIENCE IN BIOSTATISTICS(4.07/4.3) \hfill 09/2020-06/2022
 - **SHANDONG UNIVERSIY** \hfill Jinan, China\newline
   MAJOR : BACHELOR OF PUBLIC HEALTH(4.32/5) \hfill 09/2014-06/2019
   
@@ -39,10 +41,23 @@ EMAIL 2 : \href{mailto:<jeffreyliang1995@outlook.com>}{jeffreyliang1995@outlook.
 ## RESEARCH EXPERIENCE
 
 - **Department of Biostatistics, Vanderbilt University**
-\hfill New York\newline
-  _Research Assistant, Advisor: Prof. Bryan Shepherd_ \hfill 09/2023-PRESENT\newline
-  **HIV cohort synthesis data generation **
-  * Generate publishable HIV-cohort EHR data with Generative Adversary Network.
+\hfill Nashville\newline
+  _Research Assistant, Advisor: Prof. Bryan E.Shepherd, Chao Yan, Prof. Marlin A.Bradley_ \hfill 09/2023-PRESENT\newline
+  **HIV cohort synthesis data generation**
+  * Goal:Generate publishable HIV-cohort EHR data with Generative Adversary Network.
+  * Explore methods for synthetic data generation, including conditional model simulation, Variational Auto-encoder. And eventually collaborate with Prof. Bradley and Chao Yan to develop a Generative Adversary Network to generate HIV cohort data.
+  * A synthetic cross-sessional baseline cohort data has been generated and validated with test data, we observed great similarity to real data and applicable to real study and reproduce the result similar to real data.
+  * Longitudinal version of the data is under development, along with assisting R01 application.
+  
+- **Department of Biostatistics, Vanderbilt University**
+\hfill Nashville\newline
+  _Research Assistant, Advisor: Prof. Bryan E.Shepherd_ \hfill 09/2022-06/2023\newline
+  **Trend and baseline factors associated with time to HAART treatment in HIV baseline TB patient**
+  * Worked closely with bioinformatitian to generate study cohort from 2006-2020 from CCASANET(Caribbean,Central, and South America Network for HIV Epidemiology)
+  * Data analysis for the 30k patient cohort to identify changes in trend of HAART starting time among HIV patient with TB at enrollment, compared to non-TB patient
+  * Trend was analysis with cox proportional hazard model, we discover a general declining trend in all site, but Haiti has unreasonable trend after analysis
+  * Working with collaborator, we identify potential data collection mistake in Haiti and working with sites to correct the EHR database.
+
 
 - **Department of Biostatistics, Columbia University**
 \hfill New York\newline
@@ -109,9 +124,16 @@ from 44,417 observational sessions and identified 3,300 missing units of data an
 <!-- Economics Association and 2018 Healthcare Management Forum, hosted by Chinese Preventive -->
 <!-- Medicine Association. -->
 
+## Conference Appearance
+
+- **IHOWD 2024** \hfill Portugal\newline
+  _Oral Presentation_ \hfill 03/2024\newline
+  **HIV cohort synthesis data generation**
+  * Generate publishable HIV-cohort EHR data with Generative Adversary Network.
+
 ## PUBLICATION
 
- Li,J., Li,S., Cao,W., Wang,Z., __Liang,Z.__, Fu, W., and Zhao, J. (2021). Appraisal of china’s response to the outbreak of covid-19 in comparison with sars. Frontiers in Public Health, 9:830
+- Li,J., Li,S., Cao,W., Wang,Z., __Liang,Z.__, Fu, W., and Zhao, J. (2021). Appraisal of china’s response to the outbreak of covid-19 in comparison with sars. Frontiers in Public Health, 9:830
 <!-- \bibliographystyle{apalike} -->
 <!-- \bibliography{publication} -->
 
@@ -160,10 +182,6 @@ data support for a pilot feasibility project.
 <!--   _INTERN_ \hfill 05/2017-10/2017  -->
 <!--   * Monitored nutritional and health status of patients and collaborated with surgeons from the spine -->
 <!-- surgery department, gynecology department, obstetrics department, and pediatrics department. -->
-
-## Conference Appreance
-- IHOWD 2024 \hfill Portugal
-Oval Presentation:
 
 ## SKILLS
 - Computing: Python, R, Linux command line

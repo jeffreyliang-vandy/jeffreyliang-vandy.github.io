@@ -30,6 +30,11 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Github (Personal)](https://github.com/chekfayleung)
 
 ## RESEARCH EXPEIRENCE
+
+- Project: HIV cohort synthesis data generation[2023]{style="float:right"}
+
+- Project: Trend and baseline factors associated with time to HAART treatment in HIV baseline TB patients [2022]{style="float:right"}
+
 - Case Study: eHealth Resource Allocation in Shandong Province [2019]{style="float:right"}
 
 - Project: Effect of Insurance Plans on Catastrophic Healthcare Expenditures [2019]{style="float:right"}
@@ -39,6 +44,12 @@ knitr::opts_chunk$set(echo = TRUE)
 - Project: Urban-Rural Disparities in Catastrophic Health Expenditures in China [2018]{style="float:right"}
 
 ## PROFESSIONAL EXPERIENCE
+
+- Vanderbilt University Department of Biostatsitcs
+   Research Assistant [2023]{style="float:right"}
+
+- Columbia University Department of Biostatsitcs
+   Research Assistant [2021]{style="float:right"}
 
 - National Health Development and Research Center of China Health Committee
 
