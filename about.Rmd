@@ -61,7 +61,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Center of Health Data Science at Shandong University
 
-  Research Assistant [2018]{style="float:right"}
+  Intern [2018]{style="float:right"}
 
 - Qianfoshan Hospital
 
